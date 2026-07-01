@@ -436,8 +436,9 @@ h1 {
 
 .modal-panel {
   position: relative;
-  width: min(980px, 100%);
-  max-height: min(88vh, 980px);
+  width: min(1320px, calc(100vw - 40px));
+  height: min(920px, calc(100vh - 40px));
+  max-height: calc(100vh - 40px);
   overflow: auto;
   padding: 24px;
 }
@@ -555,6 +556,7 @@ tr:last-child td {
 }
 
 .ai-status {
+  grid-column: 1 / -1;
   min-height: 24px;
   color: var(--teal);
   font-weight: 700;
@@ -562,11 +564,15 @@ tr:last-child td {
 
 .ai-result {
   display: none;
+  grid-column: 1 / -1;
   margin-top: 12px;
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fff;
+  min-height: min(56vh, 620px);
+  max-height: calc(100vh - 220px);
+  overflow: auto;
   white-space: pre-wrap;
 }
 

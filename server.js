@@ -24,7 +24,7 @@ app.use((req, res, next) => {
       "font-src https://fonts.gstatic.com",
       "img-src 'self' data:",
       "connect-src 'self'",
-      "frame-ancestors 'self' https://sites.google.com https://*.google.com https://*.googleusercontent.com"
+      "frame-ancestors 'self' https://huggingface.co https://*.huggingface.co https://sites.google.com https://*.google.com https://*.googleusercontent.com"
     ].join("; ")
   );
   res.setHeader("X-Content-Type-Options", "nosniff");
