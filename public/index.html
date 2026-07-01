@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="คลังความรู้การออกแบบการจัดการเรียนรู้เชิงลึกสำหรับครูและบุคลากรทางการศึกษา">
+    <title>Learning Design Encyclopedia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js" defer></script>
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Learning Design Encyclopedia">
+          <span class="brand-mark">Edu</span>
+          <span class="brand-text">
+            <strong>Learning Design Encyclopedia</strong>
+            <small>คลังความรู้การออกแบบการจัดการเรียนรู้เชิงลึก</small>
+          </span>
+        </a>
+        <label class="search-wrap">
+          <span class="sr-only">ค้นหารูปแบบการจัดการเรียนรู้</span>
+          <input id="searchInput" type="search" placeholder="ค้นหาชื่อ แนวคิด วัตถุประสงค์ ขั้นตอน หรือแหล่งอ้างอิง">
+        </label>
+      </div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <p class="eyebrow">คลังความรู้สำหรับครู นักออกแบบการเรียนรู้ และบุคลากรทางการศึกษา</p>
+          <h1 id="heroTitle">Learning Design Encyclopedia</h1>
+          <p id="sourceOverview" class="hero-lead">กำลังโหลดข้อมูลรูปแบบการจัดการเรียนรู้...</p>
+          <div class="hero-actions" aria-label="ข้อมูลสรุป">
+            <div class="metric">
+              <span id="totalCount" class="metric-value">0</span>
+              <span class="metric-label">รูปแบบทั้งหมด</span>
+            </div>
+            <div class="metric">
+              <span id="groupCount" class="metric-value">0</span>
+              <span class="metric-label">กลุ่มการเรียนรู้</span>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-panel" aria-label="สรุปจำนวนรูปแบบตามกลุ่ม">
+          <div class="panel-head">
+            <div>
+              <h2>ภาพรวมข้อมูล</h2>
+              <p>จำนวนรายการคำนวณจาก learningData.json จริง</p>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="groupChart" aria-label="กราฟจำนวนรูปแบบการจัดการเรียนรู้ตามกลุ่ม"></canvas>
+          </div>
+          <div id="groupStats" class="group-stats"></div>
+        </div>
+      </section>
+
+      <section class="content-section" aria-labelledby="sectionTitle">
+        <div class="section-head">
+          <div>
+            <h2 id="sectionTitle">รูปแบบทั้งหมด</h2>
+            <p id="sectionDescription">เลือกกลุ่มหรือพิมพ์คำค้นเพื่อกรองรายการทันที</p>
+          </div>
+          <p id="resultCount" class="result-count">0 รายการ</p>
+        </div>
+
+        <nav id="tabs" class="tabs" aria-label="เลือกกลุ่มการเรียนรู้"></nav>
+
+        <div id="cardsGrid" class="cards-grid" aria-live="polite"></div>
+        <div id="emptyState" class="empty-state" hidden>
+          <h3>ไม่พบรายการที่ตรงกับเงื่อนไข</h3>
+          <p>ลองปรับคำค้นหรือเลือกกลุ่มอื่นเพื่อสำรวจรูปแบบการจัดการเรียนรู้เพิ่มเติม</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="detailModal" class="modal-backdrop" hidden>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+        <button id="closeModal" class="icon-button close-button" type="button" aria-label="ปิดหน้ารายละเอียด">×</button>
+        <div id="modalContent" class="modal-content"></div>
+      </section>
+    </div>
+  </body>
+</html>

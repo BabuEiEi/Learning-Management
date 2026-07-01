@@ -1,0 +1,16 @@
+{
+  "name": "learning-design-encyclopedia",
+  "version": "1.0.0",
+  "description": "คลังความรู้การออกแบบการจัดการเรียนรู้เชิงลึกสำหรับครูและบุคลากรทางการศึกษา",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
